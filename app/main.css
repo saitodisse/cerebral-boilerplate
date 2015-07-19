@@ -9,3 +9,7 @@ button {
   padding: 3px 8px;
   margin: 0px 0px 0px 8px
 }
+
+li.selectedItem {
+  background-color: rgb(195, 220, 247);
+}

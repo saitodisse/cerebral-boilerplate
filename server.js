@@ -26,8 +26,8 @@ if (isProduction) {
     });
   });
 
-  proxy.on('error', function(e) {
-    console.log('Could not connect to proxy, please try again...');
+  proxy.on('error', function(err) {
+    console.log('Could not connect to proxy, please try again...', err);
   });
 
 }
