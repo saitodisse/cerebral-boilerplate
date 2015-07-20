@@ -19,6 +19,9 @@ class App extends React.Component {
   shiftItem() {
     this.signals.Todo.shiftButton.onClick();
   }
+  removeItem() {
+    this.signals.Todo.removeItemButton.onClick();
+  }
   render() {
     return (
       <div>
@@ -36,6 +39,7 @@ class App extends React.Component {
 
         <button onClick={this.shiftItem.bind(this)}>shift (remove first)</button>
         <button onClick={this.popItem.bind(this)}>pop (remove last)</button>
+        <button onClick={this.removeItem.bind(this)}>remove selected</button>
 
         <hr />
 
