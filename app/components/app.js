@@ -48,9 +48,11 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <h1>cerebral list example</h1>
+        <h2>cerebral list example</h2>
 
         <hr />
+
+        <h4>New item</h4>
 
         <form
           className="form-horizontal"
@@ -58,7 +60,6 @@ class App extends React.Component {
 
          <div className="form-group">
             <div className="col-sm-10">
-              <label for="itemText">New Item:</label>
               <input
                 id="itemText"
                 className="form-control"
@@ -79,12 +80,16 @@ class App extends React.Component {
 
         <hr />
 
+        <h4>Actions</h4>
+
         <button onClick={this.removeItem.bind(this)} className={this.hasSelectedItem()}>remove selected</button>
         <button onClick={this.cloneItem.bind(this)} className={this.hasSelectedItem()}>clone selected</button>
         <button onClick={this.shiftItem.bind(this)} className={this.hasItems()}>shift (remove first)</button>
         <button onClick={this.popItem.bind(this)} className={this.hasItems()}>pop (remove last)</button>
 
         <hr />
+
+        <h4>All items</h4>
 
         <List data={this.props.list} />
       </div>
