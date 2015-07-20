@@ -13,3 +13,11 @@ button {
 li.selectedItem {
   background-color: rgb(195, 220, 247);
 }
+
+.enabled {
+	color: #000;
+}
+
+.disabled {
+	color: #999;
+}

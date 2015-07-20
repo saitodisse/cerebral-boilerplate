@@ -22,6 +22,18 @@ class App extends React.Component {
   removeItem() {
     this.signals.Todo.removeItemButton.onClick();
   }
+
+  hasSelectedItem() {
+    var has_selected = this.props.list.filter(function(item) {
+      return item.isSelected;
+    });
+    if (has_selected.length > 0) {
+      return 'enabled';
+    } else {
+      return 'disabled';
+    }
+  }
+
   render() {
     return (
       <div>
@@ -37,9 +49,9 @@ class App extends React.Component {
 
         <hr />
 
+        <button onClick={this.removeItem.bind(this)} className={this.hasSelectedItem()}>remove selected</button>
         <button onClick={this.shiftItem.bind(this)}>shift (remove first)</button>
         <button onClick={this.popItem.bind(this)}>pop (remove last)</button>
-        <button onClick={this.removeItem.bind(this)}>remove selected</button>
 
         <hr />
 
