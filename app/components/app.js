@@ -34,6 +34,14 @@ class App extends React.Component {
     }
   }
 
+  hasItems() {
+    if (this.props.list.length > 0) {
+      return 'enabled';
+    } else {
+      return 'disabled';
+    }
+  }
+
   render() {
     return (
       <div>
@@ -50,8 +58,8 @@ class App extends React.Component {
         <hr />
 
         <button onClick={this.removeItem.bind(this)} className={this.hasSelectedItem()}>remove selected</button>
-        <button onClick={this.shiftItem.bind(this)}>shift (remove first)</button>
-        <button onClick={this.popItem.bind(this)}>pop (remove last)</button>
+        <button onClick={this.shiftItem.bind(this)} className={this.hasItems()}>shift (remove first)</button>
+        <button onClick={this.popItem.bind(this)} className={this.hasItems()}>pop (remove last)</button>
 
         <hr />
 
