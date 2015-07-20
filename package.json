@@ -26,6 +26,7 @@
   "dependencies": {
     "babel-core": "^5.7.4",
     "babel-loader": "^5.3.2",
+    "cerebral": "^0.9.0",
     "css-loader": "^0.15.5",
     "express": "^4.13.1",
     "ramda": "^0.17.0",
@@ -33,7 +34,6 @@
     "webpack": "^1.10.1"
   },
   "devDependencies": {
-    "cerebral": "git@github.com:christianalfoni/cerebral.git",
     "eslint": "^0.24.1",
     "eslint-plugin-react": "^2.7.1",
     "http-proxy": "^1.11.1",

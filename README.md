@@ -1,8 +1,8 @@
-# cerebral-boilerplate
+# cerebral-list example
 
-A webpack boilerplate for cerebral applications.
+# (( deprecated )) 0.9.0 cerebral version
 
-Take a look at [this video](https://www.youtube.com/watch?v=Mm4B5F432SQ) introducing the boilerplate.
+Take a look at [this video](https://www.youtube.com/watch?v=Mm4B5F432SQ) introducing the list example.
 
 ## Prepare
 - `npm install`
