@@ -15,7 +15,7 @@ function getItemId(cerebral) {
   return uniqid;
 }
 
-let createNewtodo = function (cerebral, text) {
+let createNewItem = function (cerebral, text) {
 
   let item = {
     id: getItemId(cerebral),
@@ -27,4 +27,4 @@ let createNewtodo = function (cerebral, text) {
 
 };
 
-export default createNewtodo;
+export default createNewItem;

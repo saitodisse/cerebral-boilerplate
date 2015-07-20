@@ -1,23 +1,9 @@
-import createNewtodo from './utils/createNewTodo.js';
+import createNewItem from './utils/createNewItem.js';
+import getSelectedItem from './utils/getSelectedItem.js';
 
 let cloneItemSelected = function (cerebral) {
-  var all_list = cerebral.get('list');
-
-  var selected_item_id;
-  for(let i = 0; i < all_list.length; i++) {
-	let item = all_list[i];
-    if (item.isSelected) {
-      selected_item_id = i;
-      break;
-    }
-  }
-  if (typeof selected_item_id === 'undefined') {
-    return;
-  }
-  let selected_item = all_list[selected_item_id];
-
-  let item = createNewtodo(cerebral, selected_item.text);
-
+  var selected_item = getSelectedItem(cerebral);
+  let item = createNewItem(cerebral, selected_item.text);
   cerebral.push('list', item);
 };
 

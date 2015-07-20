@@ -1,8 +1,8 @@
-import createNewtodo from './utils/createNewTodo.js';
+import createNewItem from './utils/createNewItem.js';
 
 let addItem = function (cerebral) {
 
-  let item = createNewtodo(cerebral, cerebral.get('inputValue'));
+  let item = createNewItem(cerebral, cerebral.get('inputValue'));
 
   cerebral.push('list', item);
   cerebral.set('inputValue', '');
