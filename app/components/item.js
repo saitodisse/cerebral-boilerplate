@@ -17,6 +17,7 @@ class Item extends React.Component {
   render() {
     return (
       <li onClick={this.selectItem.bind(this)} className={this.checkSelected()}>
+        <span className="badge">{this.props.data.id}</span>
         {this.props.data.text}
       </li>
     );
