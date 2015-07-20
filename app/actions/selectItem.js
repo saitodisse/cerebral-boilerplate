@@ -1,4 +1,4 @@
-let selectItem = function (cerebral, data) {
+let selectItem = function (cerebral, data, ctrlKey) {
   let list = cerebral.get('list');
 
   return list.map(function(item) {
@@ -7,7 +7,7 @@ let selectItem = function (cerebral, data) {
         cerebral.set([item, 'isSelected'], true);
       }
     } else {
-      if (cerebral.get([item, 'isSelected']) === true) {
+      if (!ctrlKey && cerebral.get([item, 'isSelected']) === true) {
         cerebral.set([item, 'isSelected'], false);
       }
     }

@@ -1,10 +1,14 @@
 import createNewItem from './utils/createNewItem.js';
-import getSelectedItem from './utils/getSelectedItem.js';
+import getSelectedItems from './utils/getSelectedItems.js';
 
 let cloneItemSelected = function (cerebral) {
-  var selected_item = getSelectedItem(cerebral);
-  let item = createNewItem(cerebral, selected_item.text);
-  cerebral.push('list', item);
+  var selected_items = getSelectedItems(cerebral);
+
+  selected_items.map(function(sel_item) {
+  	let item = createNewItem(cerebral, sel_item.text);
+  	cerebral.push('list', item);
+  });
+
 };
 
 export default cloneItemSelected;

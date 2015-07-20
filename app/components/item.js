@@ -5,7 +5,7 @@ import Cerebral from 'cerebral/decorator';
 class Item extends React.Component {
   selectItem(event) {
     event.preventDefault();
-    this.signals.Todo.listItem.onClick(this.props.data);
+    this.signals.Todo.listItem.onClick(this.props.data, event.ctrlKey);
   }
   checkSelected() {
     if (this.props.data.isSelected) {
