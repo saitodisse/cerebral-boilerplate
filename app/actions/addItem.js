@@ -1,16 +1,8 @@
-function getRandomId(cerebral) {
-	var list_length = cerebral.get('list').length;
-	var uniqid = 'item_' + Number(list_length + 1);
-	return uniqid;
-}
+import createNewtodo from './utils/createNewTodo.js';
 
 let addItem = function (cerebral) {
 
-  let item = {
-    id: getRandomId(cerebral),
-    text: cerebral.get('inputValue'),
-    isSelected: false
-  };
+  let item = createNewtodo(cerebral, cerebral.get('inputValue'));
 
   cerebral.push('list', item);
   cerebral.set('inputValue', '');

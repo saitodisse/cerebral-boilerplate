@@ -9,6 +9,7 @@ import selectItem from './actions/selectItem.js';
 import popItem from './actions/popItem.js';
 import shiftItem from './actions/shiftItem.js';
 import removeItemSelected from './actions/removeItemSelected.js';
+import cloneItemSelected from './actions/cloneItemSelected.js';
 import setInputValueFromSelection from './actions/setInputValueFromSelection.js';
 
 cerebral.signal('Todo.textInput.onChange', setInputValue);
@@ -18,6 +19,7 @@ cerebral.signal('Todo.listItem.onClick', selectItem, setInputValueFromSelection)
 cerebral.signal('Todo.popButton.onClick', popItem);
 cerebral.signal('Todo.shiftButton.onClick', shiftItem);
 cerebral.signal('Todo.removeItemButton.onClick', removeItemSelected);
+cerebral.signal('Todo.cloneItemButton.onClick', cloneItemSelected);
 
 let Wrapper = cerebral.injectInto(App);
 

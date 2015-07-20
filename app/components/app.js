@@ -22,6 +22,9 @@ class App extends React.Component {
   removeItem() {
     this.signals.Todo.removeItemButton.onClick();
   }
+  cloneItem() {
+    this.signals.Todo.cloneItemButton.onClick();
+  }
 
   hasSelectedItem() {
     var has_selected = this.props.list.filter(function(item) {
@@ -58,6 +61,7 @@ class App extends React.Component {
         <hr />
 
         <button onClick={this.removeItem.bind(this)} className={this.hasSelectedItem()}>remove selected</button>
+        <button onClick={this.cloneItem.bind(this)} className={this.hasSelectedItem()}>clone selected</button>
         <button onClick={this.shiftItem.bind(this)} className={this.hasItems()}>shift (remove first)</button>
         <button onClick={this.popItem.bind(this)} className={this.hasItems()}>pop (remove last)</button>
 

@@ -1,4 +1,4 @@
-function getRandomId(cerebral) {
+function getItemId(cerebral) {
 	var list_length = cerebral.get('list').length;
 	var uniqid = 'item_' + Number(list_length + 1);
 	return uniqid;
