@@ -5,7 +5,6 @@ import Item from './item.js';
 @Cerebral(['selectedId'])
 class List extends React.Component {
   renderListItem(item) {
-    console.log('\n>>---------\n item.id:', item.id, '\n>>---------\n');
     return (
       <Item key={item.id} data={item} />
     );

@@ -3,8 +3,9 @@ import Cerebral from 'cerebral/decorator';
 
 @Cerebral(['selectedId'])
 class Item extends React.Component {
-  selectItem() {
-    this.signals.Todo.selectButton.onClick(this.props.data);
+  selectItem(event) {
+    event.preventDefault();
+    this.signals.Todo.listItem.onClick(this.props.data);
   }
   checkSelected() {
     if (this.props.data.isSelected) {
@@ -14,8 +15,9 @@ class Item extends React.Component {
   render() {
     return (
       <li className={this.checkSelected()}>
-        {this.props.data.text}
-        <button onClick={this.selectItem.bind(this)}>sel</button>
+        <a href="#" onClick={this.selectItem.bind(this)}>
+          {this.props.data.text}
+        </a>
       </li>
     );
   }

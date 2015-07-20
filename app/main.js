@@ -11,7 +11,7 @@ import shiftItem from './actions/shiftItem.js';
 
 cerebral.signal('Todo.textInput.onChange', setInputValue);
 cerebral.signal('Todo.form.onSubmit', addItem);
-cerebral.signal('Todo.selectButton.onClick', selectItem);
+cerebral.signal('Todo.listItem.onClick', selectItem);
 
 cerebral.signal('Todo.popButton.onClick', popItem);
 cerebral.signal('Todo.shiftButton.onClick', shiftItem);
