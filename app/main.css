@@ -10,6 +10,15 @@ button {
   margin: 0px 0px 0px 8px
 }
 
+li {
+  user-select: none;
+  -ms-user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -o-user-select: none;
+  -khtml-user-select: none;
+}
+
 li.selectedItem {
   background-color: rgb(195, 220, 247);
 }
