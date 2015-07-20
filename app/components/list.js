@@ -1,9 +1,8 @@
 import React from 'react';
-import Cerebral from 'cerebral/decorator';
+import StateComponent from './../StateComponent.js';
 import Item from './item.js';
 
-@Cerebral(['selectedId'])
-class List extends React.Component {
+class List extends StateComponent {
   renderListItem(item) {
     return (
       <Item key={item.id} data={item} />

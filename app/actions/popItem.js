@@ -1,5 +1,5 @@
-let popItem = function (cerebral) {
-  cerebral.pop('list');
+let popItem = function (args, state) {
+  state.pop('list');
 };
 
 export default popItem;

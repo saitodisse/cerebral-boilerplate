@@ -1,6 +1,6 @@
-let getSelectedItems = function (cerebral) {
+let getSelectedItems = function (args, state) {
 
-  var all_list = cerebral.get('list');
+  var all_list = state.get('list');
 
   var selected_item_indexes = [];
   for(let i = 0; i < all_list.length; i++) {

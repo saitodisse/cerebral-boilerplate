@@ -1,12 +1,16 @@
 import React from 'react';
-import Cerebral from 'cerebral/decorator';
+import StateComponent from './../StateComponent.js';
 
-@Cerebral(['selectedId'])
-class Item extends React.Component {
+class Item extends StateComponent {
+  getStatePaths() {
+    return {
+      selectedId: ['selectedId']
+    };
+  }
   selectItem(event) {
     event.preventDefault();
     event.stopPropagation();
-    this.signals.Todo.listItem.onClick(
+    this.signals['Todo.listItem.onClick'](
       this.props.data,
       event.ctrlKey,
       event.shiftKey

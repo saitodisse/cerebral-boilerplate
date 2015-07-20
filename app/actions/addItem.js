@@ -1,11 +1,11 @@
 import createNewItem from './utils/createNewItem.js';
 
-let addItem = function (cerebral) {
+let addItem = function (args, state) {
 
-  let item = createNewItem(cerebral, cerebral.get('inputValue'));
+  let item = createNewItem(state, state.get('inputValue'));
 
-  cerebral.push('list', item);
-  cerebral.set('inputValue', '');
+  state.push('list', item);
+  state.set('inputValue', '');
 };
 
 export default addItem;

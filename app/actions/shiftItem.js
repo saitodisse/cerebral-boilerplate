@@ -1,5 +1,5 @@
-let shiftItem = function (cerebral) {
-  cerebral.shift('list');
+let shiftItem = function (args, state) {
+  state.shift('list');
 };
 
 export default shiftItem;

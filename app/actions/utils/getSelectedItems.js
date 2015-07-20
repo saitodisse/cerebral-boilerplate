@@ -1,8 +1,8 @@
 import getSelectedItemIndexes from './getSelectedItemIndexes.js';
 
-let getSelectedItems = function (cerebral) {
-  let selected_item_indexes = getSelectedItemIndexes(cerebral);
-  var all_list = cerebral.get('list');
+let getSelectedItems = function (args, state) {
+  let selected_item_indexes = getSelectedItemIndexes(state);
+  var all_list = state.get('list');
 
   var selectedList = [];
 

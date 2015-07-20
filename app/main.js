@@ -1,7 +1,7 @@
 import './main.css';
 import React from 'react';
-import cerebral from './cerebral.js';
 import App from './components/app.js';
+import controller from './controller.js';
 
 import setInputValue from './actions/setInputValue.js';
 import addItem from './actions/addItem.js';
@@ -11,15 +11,27 @@ import shiftItem from './actions/shiftItem.js';
 import removeItemSelected from './actions/removeItemSelected.js';
 import cloneItemSelected from './actions/cloneItemSelected.js';
 
-cerebral.signal('Todo.textInput.onChange', setInputValue);
-cerebral.signal('Todo.form.onSubmit', addItem);
-cerebral.signal('Todo.listItem.onClick', selectItem);
+controller.signal('Todo.textInput.onChange', setInputValue);
+controller.signal('Todo.form.onSubmit', addItem);
+controller.signal('Todo.listItem.onClick', selectItem);
 
-cerebral.signal('Todo.popButton.onClick', popItem);
-cerebral.signal('Todo.shiftButton.onClick', shiftItem);
-cerebral.signal('Todo.removeItemButton.onClick', removeItemSelected);
-cerebral.signal('Todo.cloneItemButton.onClick', cloneItemSelected);
+controller.signal('Todo.popButton.onClick', popItem);
+controller.signal('Todo.shiftButton.onClick', shiftItem);
+controller.signal('Todo.removeItemButton.onClick', removeItemSelected);
+controller.signal('Todo.cloneItemButton.onClick', cloneItemSelected);
 
-let Wrapper = cerebral.injectInto(App);
-
+// RENDER
+const Wrapper = React.createClass({
+  childContextTypes: {
+    controller: React.PropTypes.object
+  },
+  getChildContext() {
+    return {
+      controller: controller
+    }
+  },
+  render() {
+    return <App/>;
+  }
+});
 React.render(<Wrapper/>, document.querySelector('#app'));
