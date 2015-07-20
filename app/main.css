@@ -21,3 +21,7 @@ li.selectedItem {
 .disabled {
 	color: #999;
 }
+
+.pointer-mouse {
+	cursor: pointer;
+}

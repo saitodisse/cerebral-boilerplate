@@ -12,7 +12,7 @@ class List extends React.Component {
   render() {
     return (
       <div>
-        <ul>
+        <ul className="list-group">
           {this.props.data.map(this.renderListItem)}
         </ul>
       </div>

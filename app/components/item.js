@@ -9,15 +9,15 @@ class Item extends React.Component {
   }
   checkSelected() {
     if (this.props.data.isSelected) {
-      return 'selectedItem';
+      return 'list-group-item pointer-mouse selectedItem';
+    } else {
+      return 'list-group-item pointer-mouse';
     }
   }
   render() {
     return (
-      <li className={this.checkSelected()}>
-        <a href="#" onClick={this.selectItem.bind(this)}>
-          {this.props.data.text}
-        </a>
+      <li onClick={this.selectItem.bind(this)} className={this.checkSelected()}>
+        {this.props.data.text}
       </li>
     );
   }

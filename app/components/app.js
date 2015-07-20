@@ -31,31 +31,50 @@ class App extends React.Component {
       return item.isSelected;
     });
     if (has_selected.length > 0) {
-      return 'enabled';
+      return 'btn btn-default enabled';
     } else {
-      return 'disabled';
+      return 'btn btn-default disabled';
     }
   }
 
   hasItems() {
     if (this.props.list.length > 0) {
-      return 'enabled';
+      return 'btn btn-default enabled';
     } else {
-      return 'disabled';
+      return 'btn btn-default disabled';
     }
   }
 
   render() {
     return (
       <div>
-        <h1>List</h1>
-        <form onSubmit={this.onInputValueSubmit.bind(this)}>
-          <input
-            type="text"
-            value={this.props.inputValue}
-            onChange={this.changeInputValue.bind(this)}
-          />
-          <button type="submit">add new item</button>
+        <h1>cerebral list example</h1>
+
+        <hr />
+
+        <form
+          className="form-horizontal"
+          onSubmit={this.onInputValueSubmit.bind(this)}>
+
+         <div className="form-group">
+            <div className="col-sm-10">
+              <label for="itemText">New Item:</label>
+              <input
+                id="itemText"
+                className="form-control"
+                type="text"
+                value={this.props.inputValue}
+                onChange={this.changeInputValue.bind(this)}
+              />
+            </div>
+          </div>
+
+          <div className="form-group">
+            <div className="col-sm-10">
+              <button className="btn btn-default" type="submit">add new item</button>
+            </div>
+          </div>
+
         </form>
 
         <hr />
