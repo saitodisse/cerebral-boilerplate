@@ -31,17 +31,17 @@ class App extends React.Component {
       return item.isSelected;
     });
     if (has_selected.length > 0) {
-      return 'btn btn-default enabled';
+      return false;
     } else {
-      return 'btn btn-default disabled';
+      return true;
     }
   }
 
   hasItems() {
     if (this.props.list.length > 0) {
-      return 'btn btn-default enabled';
+      return false;
     } else {
-      return 'btn btn-default disabled';
+      return true;
     }
   }
 
@@ -82,10 +82,31 @@ class App extends React.Component {
 
         <h4>Actions</h4>
 
-        <button onClick={this.removeItem.bind(this)} className={this.hasSelectedItem()}>remove selected</button>
-        <button onClick={this.cloneItem.bind(this)} className={this.hasSelectedItem()}>clone selected</button>
-        <button onClick={this.shiftItem.bind(this)} className={this.hasItems()}>shift (remove first)</button>
-        <button onClick={this.popItem.bind(this)} className={this.hasItems()}>pop (remove last)</button>
+        <button
+          onClick={this.removeItem.bind(this)}
+          disabled={this.hasSelectedItem()}
+          className="btn btn-default">
+
+          remove selected</button>
+
+        <button
+          onClick={this.cloneItem.bind(this)}
+          disabled={this.hasSelectedItem()}
+          className="btn btn-default">
+          clone selected</button>
+
+        <button
+          onClick={this.shiftItem.bind(this)}
+          disabled={this.hasItems()}
+          className="btn btn-default">
+          shift (remove first)</button>
+
+        <button
+          onClick={this.popItem.bind(this)}
+          disabled={this.hasItems()}
+          className="btn btn-default">
+          pop (remove last)</button>
+
 
         <hr />
 
