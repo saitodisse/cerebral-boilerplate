@@ -1,13 +1,15 @@
-function getRandomId() {
-	var uniqid = 'item_' + Date.now();
+function getRandomId(cerebral) {
+	var list_length = cerebral.get('list').length;
+	var uniqid = 'item_' + Number(list_length + 1);
 	return uniqid;
 }
 
 let addItem = function (cerebral) {
 
   let item = {
-    id: getRandomId(),
-    text: cerebral.get('inputValue')
+    id: getRandomId(cerebral),
+    text: cerebral.get('inputValue'),
+    isSelected: false
   };
 
   cerebral.push('list', item);

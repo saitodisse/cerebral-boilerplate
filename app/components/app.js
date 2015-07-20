@@ -13,6 +13,12 @@ class App extends React.Component {
   changeInputValue(event) {
     this.signals.Todo.textInput.onChange(event.target.value);
   }
+  popItem() {
+    this.signals.Todo.popButton.onClick();
+  }
+  shiftItem() {
+    this.signals.Todo.shiftButton.onClick();
+  }
   render() {
     return (
       <div>
@@ -23,8 +29,16 @@ class App extends React.Component {
             value={this.props.inputValue}
             onChange={this.changeInputValue.bind(this)}
           />
-          <button type="submit">add</button>
+          <button type="submit">add new item</button>
         </form>
+
+        <hr />
+
+        <button onClick={this.shiftItem.bind(this)}>shift (remove first)</button>
+        <button onClick={this.popItem.bind(this)}>pop (remove last)</button>
+
+        <hr />
+
         <List data={this.props.list} />
       </div>
     );
