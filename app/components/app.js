@@ -48,7 +48,14 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <h2>cerebral list example</h2>
+        <h2>cerebral 0.9.0 list example</h2>
+        <span>
+          This is a deprecated use of <a href="https://github.com/christianalfoni/cerebral">cerebral 0.9.0</a>.
+          <br/>
+          Do some changes bellow and see that all history is been recorded.
+          <br/>
+          - <i>note: on the right side bar, enable "keep signals" but keep "store" disabled.</i>
+        </span>
 
         <hr />
 
