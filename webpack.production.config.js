@@ -23,11 +23,11 @@ var config = {
       loader: 'style!css'
     }]
   },
-  plugins: [new Webpack.DefinePlugin({
-    "process.env": {
-      NODE_ENV: JSON.stringify("production")
-    }
-  })]
+  // plugins: [new Webpack.DefinePlugin({
+  //   "process.env": {
+  //     NODE_ENV: JSON.stringify("production")
+  //   }
+  // })]
 };
 
 module.exports = config;
